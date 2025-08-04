@@ -1,0 +1,11 @@
+#!/bin/bash
+
+_cheatsheet_completions() {
+    local cur opts
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    opts="--linux"
+    COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
+    return 0
+}
+
+complete -F _cheatsheet_completions cheatsheet

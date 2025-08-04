@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+if [[ -f /etc/bash_completion ]]; then
+  source /etc/bash_completion
+fi
+
+if [[ -f /usr/share/bash-completion/completions/cheatsheet ]]; then
+  source /usr/share/bash-completion/completions/cheatsheet
+fi
