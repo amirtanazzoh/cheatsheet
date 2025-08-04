@@ -1,8 +1,10 @@
 #!/bin/bash
 
+CHEAT_DIR="/usr/share/cheatsheet" 
+
 case "$1" in
   --linux)
-    glow -p "https://raw.githubusercontent.com/amirtanazzoh/cheet-sheets/refs/heads/main/ubuntu_cli_cheatsheet.md"
+    glow -p "$CHEAT_DIR/ubuntu_cli_cheatsheet.md"
     ;;
   *)
     echo "Usage: cheatsheet --linux"
