@@ -1,0 +1,10 @@
+#!/bin/bash
+
+case "$1" in
+  --linux)
+    glow -p "https://raw.githubusercontent.com/amirtanazzoh/cheet-sheets/refs/heads/main/ubuntu_cli_cheatsheet.md"
+    ;;
+  *)
+    echo "Usage: cheatsheet --linux"
+    ;;
+esac
