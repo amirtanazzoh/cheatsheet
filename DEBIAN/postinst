@@ -1,6 +1,25 @@
 #!/bin/bash
 set -e
 
+echo "[cheatsheet] Checking for glow..."
+
+if ! command -v glow >/dev/null 2>&1; then
+    echo "[cheatsheet] glow not found. Preparing background install..."
+
+    # Get the latest .deb URL from GitHub
+    URL=$(curl -s https://api.github.com/repos/charmbracelet/glow/releases/latest \
+      | grep "browser_download_url" \
+      | grep "glow_.*_amd64.deb" \
+      | cut -d '"' -f 4)
+
+    # Schedule background job to run after 1 minute
+    echo "wget -q \"$URL\" -O /tmp/glow_latest.deb && sudo dpkg -i /tmp/glow_latest.deb || sudo apt-get install -f -y" | at now + 1 minute
+
+    echo "[cheatsheet] glow install scheduled in 1 minute via 'at'"
+else
+    echo "[cheatsheet] glow already installed."
+fi
+
 if [[ -f /etc/bash_completion ]]; then
   source /etc/bash_completion
 fi

@@ -3,6 +3,6 @@ Version: 1.0.0
 Section: utils
 Priority: optional
 Architecture: all
-Depends: glow, bash-completion
+Depends: at, wget, curl, bash-completion
 Maintainer: Amir <amirtanazzoh@gmail.com>
 Description: A personal cheatsheet command that shows markdown guides using glow.
